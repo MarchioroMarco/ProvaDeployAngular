@@ -1,0 +1,47 @@
+<h1>Dati relativi alla velocità</h1>
+<p-table [value]="listaVelocita">
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let col of colsVelocita">
+                {{ col.header }}
+              </th>
+              <th>Allerta</th>
+              <th>Dettagli Nastro</th> 
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item let-i="rowIndex">
+        <tr>
+            <td *ngFor="let col of colsVelocita">
+                {{ item[col.field] }}
+              </td>
+              <td><font *ngIf="getAlert(item.velocita)!='NO'"color="red">{{getAlert(item.velocita)}}</font></td>
+              <td>
+                <button pButton (click)="goToNastro(item.nastroId)" label="Dettagli Nastro"></button>
+              </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<h1>Dati relativi ai consumi</h1>
+<p-table [value]="listaConsumo">
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let col of colsConsumo">
+                {{ col.header }}
+              </th>
+              <th>Allerta</th>
+              <th>Dettagli Nastro</th> 
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item let-i="rowIndex">
+        <tr>
+            <td *ngFor="let col of colsConsumo">
+                {{ item[col.field] }}
+              </td>
+              <td><font *ngIf="getAlert(item.consumo)!='NO'"color="red">{{getAlert(item.consumo)}}</font></td>
+              <td>
+                <button pButton (click)="goToNastro(item.nastroId)" label="Dettagli Nastro"></button>
+              </td>
+        </tr>
+    </ng-template>
+</p-table>
