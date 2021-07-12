@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class ApiService {
-  private readonly host = "https://provanastri-1625996012020.azurewebsites.net/api";
+  private readonly host = "https://provaNastri-1626079382160.azurewebsites.net/api";
   constructor(private http: HttpClient) {}
 
   public get(path: string): Observable<any> {
