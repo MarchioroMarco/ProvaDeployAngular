@@ -23,5 +23,6 @@ export class ApiService {
   }
   public patch(path: string, body: any): Observable<any> {
     return this.http.patch(this.host + "/" + path, body);
+    
   }
 }
